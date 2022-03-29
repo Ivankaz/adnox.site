@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npx node-sass --include-path node_modules/ --output-style compressed catalog/view/theme/mz_poco/stylesheet/sass/ -o catalog/view/theme/mz_poco/stylesheet/css/",
+    "sass:watch": "npx node-sass --watch --include-path node_modules/ --output-style compressed catalog/view/theme/mz_poco/stylesheet/sass/ -o catalog/view/theme/mz_poco/stylesheet/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivankaz/adnox.site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivankaz/adnox.site/issues"
+  },
+  "homepage": "https://github.com/ivankaz/adnox.site#readme"
+}

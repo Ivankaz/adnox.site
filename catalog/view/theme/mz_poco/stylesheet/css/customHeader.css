@@ -1,1 +1,1 @@
-.header{display:flex;font-size:14px}
+body{padding:0;margin:0}.customHeader{display:flex;font-size:14px;font-family:"Nunito Sans", Sans-Serif}.customHeader__menu{display:flex;flex-direction:row}.customHeader__menu_1{gap:40px;padding:30px 40px 10px}.customHeader__logo img{height:36px}

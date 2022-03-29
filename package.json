@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ivankaz/adnox.site/issues"
   },
-  "homepage": "https://github.com/ivankaz/adnox.site#readme"
+  "homepage": "https://github.com/ivankaz/adnox.site#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
 }

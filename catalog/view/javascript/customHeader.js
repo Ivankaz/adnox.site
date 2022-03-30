@@ -1,10 +1,17 @@
 // функции шапки сайта
 function initCustomHeader() {
   console.log('init');
+  let menu1_height = $('.customHeader__menu_1').outerHeight();
 
-  window.test = function() {
-    console.log($('.customHeader').html());
-  }
+  $(window).scroll(function() {
+    // если страницу прокрутили дальше высоты первого уровня меню
+    if ($(this).scrollTop() > menu1_height) {
+      // то скрываю 2 и 3 уровни меню
+      $('.customHeader__menu_2, .customHeader__menu_3').addClass('h-hide');
+    } else {
+      $('.customHeader__menu_2').removeClass('h-hide');
+    }
+  });
 }
 
 // загружаю jQuery, если он ещё не загружен

@@ -3,6 +3,10 @@ body
   margin: 0
 
 .customHeader
+  position: fixed
+  background: #fff
+  z-index: 9999
+  top: 0
   display: flex
   flex-direction: column
   font-size: 14px
@@ -11,6 +15,9 @@ body
   width: 100%
   padding: 0px
   margin: 0
+
+  &+section
+    margin-top: 136px
 
   &__menu
     display: flex
@@ -22,7 +29,7 @@ body
 
     &_2
       justify-content: space-between
-      padding: 10px 40px 0px
+      padding: 10px 40px 10px
 
     &_3
       border-top: 1px solid #c4c4c4
@@ -227,3 +234,6 @@ body
       &__part
         stroke: #000
         fill: #fff
+
+  .h-hide
+    display: none

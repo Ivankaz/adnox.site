@@ -8,8 +8,11 @@ function initCustomHeader() {
     if ($(this).scrollTop() > menu1_height) {
       // то скрываю 2 и 3 уровни меню
       $('.customHeader__menu_2, .customHeader__menu_3').addClass('h-hide');
+      // изменяю отступы у верхнего меню
+      $('.customHeader__menu_1').addClass('menu1_scroll');
     } else {
       $('.customHeader__menu_2').removeClass('h-hide');
+      $('.customHeader__menu_1').removeClass('menu1_scroll');
     }
   });
 }

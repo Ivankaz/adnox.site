@@ -6,6 +6,7 @@ body
   display: flex
   font-size: 14px
   font-family: "Nunito Sans", Sans-Serif
+  align-items: center
 
   &__menu
     display: flex
@@ -45,3 +46,28 @@ body
     &:hover, &:active, &_active
       color: #000
       border-bottom: 1px solid #000
+
+  &__search
+    display: flex
+    flex-direction: row
+    flex: 1 1 auto
+    margin: 0
+    padding: 0
+    align-items: center
+    border: 1px solid #284184
+
+  .search__input
+    width: 100%
+    height: 100%
+    border: none
+    outline: 0
+    padding: 0 1.3rem
+    color: #495057
+
+  .search__button
+    padding: 0.5rem
+    background-color: #fff
+    color: #284184
+    cursor: pointer
+    border: none
+    outline: none

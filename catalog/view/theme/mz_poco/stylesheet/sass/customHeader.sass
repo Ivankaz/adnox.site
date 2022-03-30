@@ -4,9 +4,13 @@ body
 
 .customHeader
   display: flex
+  flex-direction: column
   font-size: 14px
   font-family: "Nunito Sans", Sans-Serif
-  align-items: center
+  justify-content: center
+  width: 100%
+  padding: 0px
+  margin: 0
 
   &__menu
     display: flex
@@ -55,6 +59,7 @@ body
     padding: 0
     align-items: center
     border: 1px solid #284184
+    max-width: 300px
 
   .search__input
     width: 100%
@@ -71,3 +76,21 @@ body
     cursor: pointer
     border: none
     outline: none
+
+  &__phone
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-end
+    flex-grow: 1
+
+  .phone__link
+    color: #989898
+    font-size: 14px
+    line-height: 18px
+    text-decoration: none
+    cursor: pointer
+    transition: color .15s ease-in
+
+    &:hover, &:active
+      color: #000

@@ -104,3 +104,37 @@ body
 
     &:hover, &:active
       color: #000
+
+  .menu__buttons
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    gap: 15px
+
+  .buttons__button
+    text-decoration: none
+    cursor: pointer
+    color: #fff
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: flex-end
+
+    &:hover, &:active
+      opacity: .5
+
+    .button
+      &__total
+        font-size: 10px
+        height: 18px
+        position: absolute
+
+    .icon
+      &_active
+        .icon__part_active
+          fill: #000
+
+      &__part
+        stroke: #000
+        fill: #fff

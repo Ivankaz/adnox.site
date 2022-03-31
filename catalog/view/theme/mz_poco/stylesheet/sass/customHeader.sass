@@ -34,6 +34,61 @@ body
       justify-content: space-between
       padding: 10px
 
+    .mobile__body
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      display: flex
+      flex-direction: column
+      gap: 20px
+      max-width: 100%
+      min-height: 100%
+      overflow-x: hidden
+      padding: 10px
+      margin: 0
+      background-color: #fff
+
+      .body__top
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        gap: 25px
+
+      .body__search
+        display: flex
+        flex-direction: row
+        align-items: center
+        border: 1px solid #c4c4c4
+        padding: 0
+        width: 100%
+
+        .search__input
+          font-size: 14px
+          width: 100%
+          height: 100%
+          border: none
+          outline: 0
+          padding: 0
+          margin: 0
+          color: #000
+          background-color: transparent
+
+        input[name="search"]::-webkit-input-placeholder
+          color: #c4c4c4
+        input[name="search"]::-moz-placeholder
+          color: #c4c4c4
+
+        .search__button
+          background-color: transparent
+          line-height: 0px
+          color: #c4c4c4
+
+      .body__close
+
+
+
   &__menu
     display: flex
     flex-direction: row
@@ -180,21 +235,6 @@ body
       align-items: center
       gap: 15px
 
-    .buttons__button
-      text-decoration: none
-      cursor: pointer
-      background-color: transparent
-      color: #fff
-      position: relative
-      display: flex
-      justify-content: center
-      align-items: flex-end
-      outline: none
-      border: none
-
-      &:hover, &:active
-        opacity: .5
-
       .button
         &__total
           font-size: 10px
@@ -209,32 +249,6 @@ body
         &__part
           stroke: #000
           fill: #fff
-
-    .menu__search
-      display: flex
-      flex-direction: row
-      flex: 1 1 auto
-      margin: 0
-      padding: 0
-      align-items: center
-      border: 1px solid #284184
-      max-width: 300px
-
-    .search__input
-      width: 100%
-      height: 100%
-      border: none
-      outline: 0
-      padding: 0 1.3rem
-      color: #495057
-
-    .search__button
-      padding: 0.5rem
-      background-color: #fff
-      color: #284184
-      cursor: pointer
-      border: none
-      outline: none
 
     .menu__phone
       display: flex
@@ -253,6 +267,47 @@ body
 
         &:hover, &:active
           color: #000
+
+  .buttons__button
+    text-decoration: none
+    cursor: pointer
+    background-color: transparent
+    color: #fff
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    outline: none
+    border: none
+
+    &:hover, &:active
+      opacity: .5
+
+  .menu__search
+    display: flex
+    flex-direction: row
+    flex: 1 1 auto
+    margin: 0
+    padding: 0
+    align-items: center
+    border: 1px solid #284184
+    max-width: 300px
+
+  .search__input
+    width: 100%
+    height: 100%
+    border: none
+    outline: 0
+    padding: 0 1.3rem
+    color: #495057
+
+  .search__button
+    padding: 0.5rem
+    background-color: #fff
+    color: #284184
+    cursor: pointer
+    border: none
+    outline: none
 
   .menu1_scroll
     padding: 15px 40px 20px

@@ -10,9 +10,12 @@ function initCustomHeader() {
       $('.customHeader__menu_2, .customHeader__menu_3').addClass('h-hide');
       // изменяю отступы у верхнего меню
       $('.customHeader__menu_1').addClass('menu1_scroll');
+      // перемещаю кнопки в меню верхнего уровня
+      $('.customHeader .menu__buttons').detach().appendTo('.customHeader__menu_1');
     } else {
       $('.customHeader__menu_2').removeClass('h-hide');
       $('.customHeader__menu_1').removeClass('menu1_scroll');
+      $('.customHeader .menu__buttons').detach().appendTo('.customHeader__menu_2');
     }
   });
 }

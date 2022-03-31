@@ -14,11 +14,11 @@
         <a href="#"><img src="/catalog/view/theme/mz_poco/image/logo.png" alt="Купить мебель в Краснодаре"></a>
       </div>
       <nav class="menu__links">
-        <a href="#" data-submenu-id="1" class="links__link menu1__link menu1__link_active">Товары</a>
-        <a href="#" data-submenu-id="2" class="links__link menu1__link">Комнаты</a>
-        <a href="#" data-submenu-id="3" class="links__link menu1__link">Магазины</a>
-        <a href="#" data-submenu-id="4" class="links__link menu1__link">Идеи и тренды</a>
-        <a href="#" data-submenu-id="5" class="links__link menu1__link">О компании</a>
+        <a href="#" data-submenu-id="2_1" class="links__link menu1__link menu1__link_active">Товары</a>
+        <a href="#" data-submenu-id="2_2" class="links__link menu1__link">Комнаты</a>
+        <a href="#" class="links__link menu1__link">Магазины</a>
+        <a href="#" class="links__link menu1__link">Идеи и тренды</a>
+        <a href="#" class="links__link menu1__link">О компании</a>
       </nav>
       <form action="#" method="GET" class="customHeader__search">
         <input type="text" name="search" class="search__input" placeholder="Поиск по сайту">
@@ -34,17 +34,14 @@
       </div>
     </div>
     <div class="customHeader__menu customHeader__menu_2">
-      <nav data-submenu-id="1" class="menu__links">
-        <a href="#" data-submenu-id="1" class="links__link menu2__link">Ссылка 1</a>
-        <a href="#" data-submenu-id="2" class="links__link menu2__link">Ссылка 2</a>
-        <a href="#" data-submenu-id="3" class="links__link menu2__link">Ссылка 3</a>
-        <a href="#" data-submenu-id="4" class="links__link menu2__link">Ссылка 4 </a>
-        <a href="#" data-submenu-id="5" class="links__link menu2__link">Ссылка 5</a>
+      <nav data-submenu="2_1" class="menu__links js-submenu">
+        <a href="#" data-submenu-id="3_1" class="links__link menu2__link">Ссылка 1</a>
+        <a href="#" data-submenu-id="3_2" class="links__link menu2__link">Ссылка 2</a>
       </nav>
-      <nav data-submenu-id="2" class="menu__links">
-        <a href="#" data-submenu-id="6" class="links__link menu2__link">Ссылка 6</a>
-        <a href="#" data-submenu-id="7" class="links__link menu2__link">Ссылка 7</a>
-        <a href="#" class="links__link menu2__link">Ссылка 2</a>
+      <nav data-submenu="2_2" class="menu__links js-submenu h-hide">
+        <a href="#" data-submenu-id="3_3" class="links__link menu2__link">Ссылка 3</a>
+        <a href="#" data-submenu-id="3_4" class="links__link menu2__link">Ссылка 4</a>
+        <a href="#" class="links__link menu2__link">Ссылка 5</a>
       </nav>
       <nav class="menu__buttons">
         <a href="#" class="buttons__button" title="Личный кабинет">
@@ -68,7 +65,7 @@
         </a>
       </nav>
     </div>
-    <div data-submenu-id="1" class="customHeader__menu customHeader__menu_3 h-hide">
+    <div data-submenu="3_1" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
       <nav class="menu__links links__columns">
         <ul class="links__column">
           <li class="column__row column__row_title">
@@ -161,7 +158,8 @@
           </div>
         </a>
       </div>
-      <div data-submenu-id="1" class="customHeader__menu customHeader__menu_3 h-hide">
+    </div>
+    <div data-submenu="3_2" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
         <nav class="menu__links links__columns">
           <ul class="links__column">
             <li class="column__row column__row_title">
@@ -254,6 +252,94 @@
             </div>
           </a>
         </div>
+      </div>
+    <div data-submenu="3_3" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
+      <nav class="menu__links links__columns">
+        <ul class="links__column">
+          <li class="column__row column__row_title">
+            <a href="#" class="row__link row__link_title">Все диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Прямые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Угловые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Модульные диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Кушетки</a>
+          </li>
+          <li class="column__row column__row_bottom">
+            <a href="#" class="row__link row__link_bottom">Конструктор диванов</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="menu__banner">
+        <a class="banner" href="#">
+          <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner.png" alt="Баннер">
+          <div class="banner__body">
+            <div class="body__title">TRENDS: ТЕСТ</div>
+            <div class="body__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facere, itaque odio, corporis nesciunt esse eos quae dicta modi commodi consequuntur perspiciatis quibusdam necessitatibus maiores aut odit consectetur at laudantium.</div>
+            <div class="body__link">Кнопка</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div data-submenu="3_4" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
+      <nav class="menu__links links__columns">
+        <ul class="links__column">
+          <li class="column__row column__row_title">
+            <a href="#" class="row__link row__link_title">Все диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Прямые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Угловые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Модульные диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Кушетки</a>
+          </li>
+          <li class="column__row column__row_bottom">
+            <a href="#" class="row__link row__link_bottom">Конструктор диванов</a>
+          </li>
+        </ul>
+        <ul class="links__column">
+          <li class="column__row column__row_title">
+            <a href="#" class="row__link row__link_title">Все диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Прямые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Угловые диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Модульные диваны</a>
+          </li>
+          <li class="column__row">
+            <a href="#" class="row__link row__link_item">Кушетки</a>
+          </li>
+          <li class="column__row column__row_bottom">
+            <a href="#" class="row__link row__link_bottom">Конструктор диванов</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="menu__banner">
+        <a class="banner" href="#">
+          <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner.png" alt="Баннер">
+          <div class="banner__body">
+            <div class="body__title">ПРИМЕР</div>
+            <div class="body__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facere, itaque odio, corporis nesciunt esse eos quae dicta modi commodi consequuntur perspiciatis quibusdam necessitatibus maiores aut odit consectetur at laudantium.</div>
+            <div class="body__link">Кнопка</div>
+          </div>
+        </a>
+      </div>
     </div>
   </header>
   <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veniam impedit cupiditate quaerat dolores nulla dignissimos. Cupiditate autem magni repudiandae molestias, ducimus, nulla alias tempore et fugiat officiis eaque non qui error veniam laudantium eius sunt debitis reiciendis mollitia. Minus quasi hic, libero quam, quos impedit enim? Quis aspernatur fuga officia laudantium illo magni, explicabo consequuntur sit. Perspiciatis perferendis et eligendi debitis. Cumque eum quaerat quibusdam magni dolor itaque voluptate vel harum excepturi obcaecati nisi temporibus expedita, repellat doloribus, at inventore voluptatibus aliquid praesentium sequi? Eos tempore quasi sint perspiciatis recusandae suscipit inventore, error quibusdam, voluptatum optio nobis accusamus aspernatur. Perspiciatis voluptatem harum magnam ipsum quis sunt accusamus ipsam, qui modi odit mollitia impedit esse id ipsa provident praesentium maiores maxime deserunt sint corporis optio. Eaque eius accusantium unde harum explicabo, magni ad animi ipsam adipisci quasi quo, alias nostrum voluptatem aliquid quisquam illum mollitia doloribus deleniti maxime atque molestiae quae optio. Veniam ab dignissimos, dolore sapiente blanditiis, voluptas placeat illo sint quas, accusamus quia, alias harum debitis. Accusantium debitis aliquid voluptates provident, voluptatibus dolores commodi omnis. Tenetur at suscipit a dolor quaerat magni consequatur iusto et tempore nostrum, eligendi, nemo perspiciatis, ipsum provident, saepe quos commodi. Iste veritatis facere maxime, dolorem error accusantium tenetur aspernatur totam et. Maxime facere tempore voluptatem veniam? Quam consequatur iure, sapiente, soluta eligendi ipsa consectetur repudiandae, veniam velit sed quo aut libero nulla dignissimos tempore facere consequuntur delectus iusto temporibus perspiciatis. Debitis delectus ipsam nobis atque dolores amet, praesentium voluptatibus, accusantium magnam alias. Qui itaque provident, adipisci culpa, molestiae veritatis nostrum deleniti ipsa excepturi aperiam ullam blanditiis id laboriosam nisi facere libero ut. Optio excepturi dignissimos doloribus suscipit soluta. Obcaecati laborum nemo velit neque, quae eveniet provident voluptatem, repellat quo, facere numquam, excepturi dolores eaque officia sit dicta maxime. Atque exercitationem incidunt neque, culpa ipsa amet eos maxime possimus provident maiores iure dolorum veritatis sunt distinctio cumque eius corporis perferendis qui accusamus animi itaque, illo, nulla. Distinctio atque fuga, aliquid molestias veniam iusto natus rem enim perferendis, dolorem nostrum a quidem ipsam sint expedita facilis provident alias. Sed, laudantium voluptates velit repellendus fugit doloribus nulla porro, qui, sunt accusantium praesentium illum dolore. Dicta optio dolore unde earum eveniet deserunt quas dolorem accusantium, voluptates enim fugit provident, numquam sed, eius nostrum ex itaque veniam? At quis, voluptatem natus vero iste magni, quidem debitis perspiciatis saepe sint vel minus eaque id rem culpa. Ipsam et tenetur quam. Quo ut suscipit, rem excepturi voluptatibus veniam, placeat id modi quam enim, dignissimos. Optio enim nesciunt ea ipsa numquam quia quae accusantium voluptas, ex possimus itaque consequuntur culpa, aliquam necessitatibus dicta laboriosam doloremque molestiae voluptatum, ab quis maxime qui! Molestiae, autem atque a porro culpa reprehenderit id, ea quos provident consequatur pariatur corporis! Voluptas, eveniet labore, similique doloremque illum reprehenderit, atque animi eius reiciendis laboriosam assumenda dolorem nobis tempore, dolorum id. Magni eveniet sint necessitatibus culpa corporis atque maiores odit, explicabo delectus qui consectetur, officiis, voluptates assumenda. Architecto repellendus harum animi nesciunt esse quaerat nostrum, cupiditate suscipit sed perspiciatis. Odit explicabo, rerum molestiae fugit illum incidunt ipsa inventore excepturi eaque praesentium impedit eius et cum nostrum quo voluptatibus aperiam. Ullam, a, optio. Saepe assumenda quas ducimus doloremque, deleniti inventore, velit veritatis atque nostrum quam nesciunt amet perferendis. Quasi nobis quis earum sed voluptas doloribus perferendis enim omnis. Fugiat ipsum nesciunt nisi sunt doloremque repudiandae, mollitia magni necessitatibus minus deserunt, beatae reprehenderit quaerat nulla natus laborum unde eaque perspiciatis. Dicta non animi reprehenderit laboriosam quo, placeat praesentium architecto ut mollitia qui atque laborum id facere quibusdam illo cupiditate, officiis. Sequi, adipisci, asperiores. Culpa nihil deserunt nulla ratione esse, placeat a ullam inventore repellendus sunt iusto dignissimos laborum earum alias facere, molestias recusandae cumque laudantium deleniti! Doloremque, molestias, accusamus. Obcaecati sequi enim eius minus distinctio iste ad aliquid voluptate, consequatur aliquam, veritatis harum, voluptas eum quibusdam laudantium voluptates doloremque voluptatem excepturi in autem, repudiandae doloribus! Dolor quidem aliquam itaque autem animi consequuntur laudantium reiciendis? Repellat magni amet rerum neque a fugiat nostrum sint earum voluptates suscipit. Eos rerum perspiciatis, voluptatum hic ea ipsa ipsam, harum, laudantium animi id quos veritatis consequuntur. Deleniti exercitationem vero asperiores omnis, nostrum recusandae non error ipsam. Quisquam natus ad nisi. Perferendis, nulla omnis quia. Modi eos, consectetur accusantium earum laborum perferendis quisquam. Doloremque dolor rerum nulla cum nam a rem voluptas pariatur consequuntur similique facere illo, inventore dolore optio nesciunt facilis sed repellendus quaerat odit, laborum sint eligendi eaque! Ex, blanditiis? Nam a dignissimos corporis nulla, ut debitis iste dolore numquam ratione labore necessitatibus quo quod explicabo vel reiciendis aperiam aut doloribus voluptas iusto, eos velit? Harum possimus impedit esse dolores nesciunt, quae error quasi quidem rem delectus distinctio, ducimus a dignissimos dolor excepturi ratione debitis hic vitae nihil quo. Obcaecati placeat velit quaerat molestias suscipit alias asperiores expedita totam hic dignissimos nihil autem, a quibusdam, voluptatibus sint deleniti sed debitis inventore iste architecto aliquid, sapiente. Consequuntur laudantium, commodi dignissimos, ad aut deleniti tenetur quas enim quod. Laboriosam, obcaecati temporibus deserunt est in, odit doloremque corporis esse saepe! Alias vitae facere corporis soluta vero quis quam minima, nobis doloremque doloribus. Odit, illum ab amet suscipit! Nobis dolorem possimus quisquam dolorum ipsum nam expedita, ipsam? Libero, neque, assumenda! Omnis tempora quam libero aperiam reprehenderit ab culpa voluptas quia quidem. Iste optio rerum ex cumque dolore minus harum, quia quisquam. Minima, ipsa ducimus quas eum id voluptas consequatur similique, vel non architecto! Quia ut labore magnam modi reprehenderit corporis itaque soluta minus culpa quas laudantium explicabo quibusdam sit, consequuntur, iure molestias rem dolore. Placeat optio maxime, accusamus quaerat laudantium nostrum! Nemo inventore earum ipsam, non eos quos obcaecati ducimus. Facere dolore quia ullam quis non asperiores amet repudiandae excepturi saepe aut praesentium voluptatum unde, ratione ipsam consectetur id, ut, necessitatibus iusto odio officiis rem beatae impedit mollitia! Nobis dolor quae officiis consectetur culpa suscipit dolorum totam accusantium tenetur, earum sint animi iste dignissimos sit possimus ab alias eos. Aperiam odit laborum quasi, dolor, maxime, pariatur reprehenderit ut officiis neque consequatur quam sunt iste veritatis suscipit laudantium voluptatem error?</section>

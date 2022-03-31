@@ -20,15 +20,24 @@ function initCustomHeader() {
     // если страницу прокрутили
     if ($(this).scrollTop() > 0) {
       // то скрываю 2 и 3 уровни меню
-      $('.customHeader__menu_2, .customHeader__menu_3, .customHeader .js-submenu').addClass('h-hide');
+      $('.customHeader__menu_2, .customHeader__menu_3, customHeader__desktop .js-submenu').addClass('h-hide');
       // изменяю отступы у верхнего меню
       $('.customHeader__menu_1').addClass('menu1_scroll');
       // перемещаю кнопки в меню верхнего уровня
-      $('.customHeader .menu__buttons').detach().appendTo('.customHeader__menu_1');
+      $('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_1');
     } else {
-      $('.customHeader__menu_2, .customHeader__menu_2 .js-submenu:first').removeClass('h-hide');
+      $('.customHeader__menu_2 .js-submenu').addClass('h-hide');
+
+      // показываю или первое вложенное меню 2 уровня, или последнее активное, если такое есть
+      let activeSubmenuSelector = ':first';
+      let activeSubmenuId = $('.customHeader__menu_1 .menu1__link_active').data('submenu-id');
+      if (typeof activeSubmenuId !== 'undefined') {
+        let activeSubmenuSelector = '[data-submenu='+activeSubmenuId+']';
+      }
+
+      $('.customHeader__menu_2, .customHeader__menu_2 .js-submenu'+activeSubmenuSelector).removeClass('h-hide');
       $('.customHeader__menu_1').removeClass('menu1_scroll');
-      $('.customHeader .menu__buttons').detach().appendTo('.customHeader__menu_2');
+      $('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_2');
     }
   });
 

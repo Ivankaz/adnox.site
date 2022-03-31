@@ -2,6 +2,12 @@ body
   padding: 0
   margin: 0
 
+.customHeader:last-of-type + section
+  @media screen and (min-width: 1024px)
+    margin-top: 136px
+  @media screen and (max-width: 1024px)
+    margin-top: 73px
+
 .customHeader
   position: fixed
   background: #fff
@@ -16,8 +22,17 @@ body
   padding: 0px
   margin: 0
 
-  &+section
-    margin-top: 136px
+  &__desktop
+    @media screen and (max-width: 1024px)
+      display: none
+
+  &__mobile
+    @media screen and (min-width: 1024px)
+      display: none
+
+    .mobile__top
+      justify-content: space-between
+      padding: 10px
 
   &__menu
     display: flex
@@ -154,87 +169,90 @@ body
             border-bottom: 1px solid #000
             padding: 0px 0px 3px 0px
 
-  &__logo
-    img
-      height: 36px
+    .menu__logo
+      img
+        height: 36px
 
-  &__search
-    display: flex
-    flex-direction: row
-    flex: 1 1 auto
-    margin: 0
-    padding: 0
-    align-items: center
-    border: 1px solid #284184
-    max-width: 300px
+    .menu__buttons
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      gap: 15px
 
-  .search__input
-    width: 100%
-    height: 100%
-    border: none
-    outline: 0
-    padding: 0 1.3rem
-    color: #495057
+    .buttons__button
+      text-decoration: none
+      cursor: pointer
+      background-color: transparent
+      color: #fff
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: flex-end
+      outline: none
+      border: none
 
-  .search__button
-    padding: 0.5rem
-    background-color: #fff
-    color: #284184
-    cursor: pointer
-    border: none
-    outline: none
+      &:hover, &:active
+        opacity: .5
 
-  &__phone
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: flex-end
-    flex-grow: 1
+      .button
+        &__total
+          font-size: 10px
+          height: 18px
+          position: absolute
 
-  .phone__link
-    color: #989898
-    font-size: 14px
-    line-height: 18px
-    text-decoration: none
-    cursor: pointer
-    transition: color .15s ease-in
+      .icon
+        &_active
+          .icon__part_active
+            fill: #000
 
-    &:hover, &:active
-      color: #000
+        &__part
+          stroke: #000
+          fill: #fff
 
-  .menu__buttons
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-    gap: 15px
+    .menu__search
+      display: flex
+      flex-direction: row
+      flex: 1 1 auto
+      margin: 0
+      padding: 0
+      align-items: center
+      border: 1px solid #284184
+      max-width: 300px
 
-  .buttons__button
-    text-decoration: none
-    cursor: pointer
-    color: #fff
-    position: relative
-    display: flex
-    justify-content: center
-    align-items: flex-end
+    .search__input
+      width: 100%
+      height: 100%
+      border: none
+      outline: 0
+      padding: 0 1.3rem
+      color: #495057
 
-    &:hover, &:active
-      opacity: .5
+    .search__button
+      padding: 0.5rem
+      background-color: #fff
+      color: #284184
+      cursor: pointer
+      border: none
+      outline: none
 
-    .button
-      &__total
-        font-size: 10px
-        height: 18px
-        position: absolute
+    .menu__phone
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-end
+      flex-grow: 1
 
-    .icon
-      &_active
-        .icon__part_active
-          fill: #000
+      .phone__link
+        color: #989898
+        font-size: 14px
+        line-height: 18px
+        text-decoration: none
+        cursor: pointer
+        transition: color .15s ease-in
 
-      &__part
-        stroke: #000
-        fill: #fff
+        &:hover, &:active
+          color: #000
 
   .menu1_scroll
     padding: 15px 40px 20px

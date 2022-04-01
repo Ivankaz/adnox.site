@@ -39,15 +39,36 @@ body
       top: 0
       left: 0
       right: 0
-      display: flex
-      flex-direction: column
-      gap: 20px
-      max-width: 100%
-      min-height: 100%
-      overflow-x: hidden
-      padding: 10px
+      width: 100%
+      height: 100%
+      padding: 0
       margin: 0
-      background-color: #fff
+
+      .body__wrap
+        position: fixed
+        display: flex
+        flex-direction: column
+        gap: 20px
+        width: 100%
+        max-width: 374px
+        height: 100%
+        overflow-x: hidden
+        padding: 20px
+        margin: 0
+        background-color: #fff
+        z-index: 100
+
+      .body__blackout
+        display: block
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,.3)
+        z-index: 99
 
       .body__top
         display: flex

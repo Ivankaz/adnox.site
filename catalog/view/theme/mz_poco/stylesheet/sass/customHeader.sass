@@ -89,13 +89,63 @@ body
         &_footer
 
         .menu__links
-          overflow-x: scroll
-          -ms-overflow-style: none
-          scrollbar-width: none
+          &_menu1
+            overflow-x: scroll
+            -ms-overflow-style: none
+            scrollbar-width: none
 
-          &::-webkit-scrollbar
-            width: 0
-            height: 0
+            &::-webkit-scrollbar
+              width: 0
+              height: 0
+
+          &_menu2
+            gap: 0
+            display: flex
+            flex-direction: column
+
+            .links__row
+              display: flex
+              flex-direction: row
+              justify-content: flex-start
+              align-items: center
+              padding: 17px 0px 12px
+              cursor: pointer
+
+              .row__icon
+                background-position: 50%
+                background-repeat: no-repeat
+                background-size: contain
+                display: block
+                flex: 0 0 auto
+                height: 25px
+                width: 34px
+                margin: 0px 25px 0px 0px
+
+              .row__link
+                display: flex
+                flex-direction: row
+                align-items: center
+                width: 100%
+                color: #000
+                font-size: 14px
+                margin: 0 auto 0 0
+                text-decoration: none
+
+                &_withSubmenu
+                  justify-content: space-between
+
+                  &::after
+                    content: ''
+                    background-image: url('/catalog/view/theme/mz_poco/image/right-arrow-icon.svg')
+                    background-position: 50%
+                    background-repeat: no-repeat
+                    background-size: contain
+                    display: block
+                    flex: 0 0 auto
+                    margin: 0 25 0 0
+                    width: 10px
+                    height: 15px
+
 
       .body__search
         display: flex
@@ -352,4 +402,4 @@ body
     padding: 15px 40px 20px
 
   .h-hide
-    display: none
+    display: none !important

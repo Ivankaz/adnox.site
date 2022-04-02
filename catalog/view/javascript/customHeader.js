@@ -72,6 +72,9 @@ function initCustomHeader() {
     $('.customHeader__mobile .mobile__body .body__wrap').animate({'max-width': '0px', 'padding': '0px'}, 500);
     let timeout = setTimeout(function() {
       $('.customHeader__mobile .mobile__body').addClass('h-hide');
+
+      // скрываю мобильное поле поиска
+      hideMobileSearch();
     }, 500);
   }
 
@@ -80,6 +83,12 @@ function initCustomHeader() {
     $('.customHeader__mobile .mobile__body').removeClass('h-hide');
     $('.customHeader__mobile .mobile__body .body__wrap').css('height', 'initial').animate({'max-width': '100%', 'padding': '20px 20px 0px 20px'}, 300);
     $('.customHeader__mobile .mobile__body .body__menu').addClass('h-hide');
+  }
+
+  // скрыть мобильный поиск
+  window.hideMobileSearch = function() {
+    $('.customHeader__mobile .mobile__body .body__wrap').css('height', '100%');
+    $('.customHeader__mobile .mobile__body').find('.body__menu_1, .body__menu_2, .body__menu_footer').removeClass('h-hide');
   }
 }
 

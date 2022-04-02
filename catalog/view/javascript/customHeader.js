@@ -66,6 +66,14 @@ function initCustomHeader() {
     $('.customHeader__mobile .mobile__body').removeClass('h-hide');
     $('.customHeader__mobile .mobile__body .body__wrap').animate({'max-width': '374px', 'padding': '20px'}, 500);
   }
+
+  // скрыть мобильное меню
+  window.hideMobileMenu = function() {
+    $('.customHeader__mobile .mobile__body .body__wrap').animate({'max-width': '0px', 'padding': '0px'}, 500);
+    let timeout = setTimeout(function() {
+      $('.customHeader__mobile .mobile__body').addClass('h-hide');
+    }, 500);
+  }
 }
 
 // загружаю jQuery, если он ещё не загружен

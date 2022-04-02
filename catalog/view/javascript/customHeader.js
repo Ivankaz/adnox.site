@@ -61,6 +61,15 @@ function initCustomHeader() {
     eventUpdatedActiveLink(this);
   });
 
+  // если кликнули по ссылке в мобильном меню 2 уровня
+  $('.customHeader__mobile .menu__links_menu2 .links__row').click(function() {
+    let submenuId = $(this).find('.row__link').data('submenu-id');
+    let submenu = $('.customHeader__mobile [data-submenu='+submenuId+']');
+
+    // показываю меню 3 уровня
+    $(submenu).removeClass('h-hide').animate({'max-width': '100%'}, 500);
+  });
+
   // показать мобильное меню
   window.showMobileMenu = function() {
     $('.customHeader__mobile .mobile__body').removeClass('h-hide');

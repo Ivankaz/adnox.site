@@ -5,7 +5,7 @@ function initCustomHeader() {
     let submenuId = $(activeLink).data('submenu-id');
     if (typeof submenuId == 'undefined') return false;
     let submenuIdPrefix = submenuId.slice(0, submenuId.lastIndexOf("_")+1);
-    let submenu = $('.customHeader [data-submenu='+submenuId+']').get(0);
+    let submenu = $(activeLink).parents('.customHeader').find('[data-submenu='+submenuId+']').get(0);
     let submenuParent = $(submenu).parent();
 
     // скрываю все вложенные меню
@@ -42,9 +42,9 @@ function initCustomHeader() {
   });
 
   // если навели мышку на ссылку в меню 1 уровня
-  $('.customHeader__menu_1 .menu1__link').mouseover(function() {
+  $('.menu1__link').mouseover(function() {
     // то устанавливаю эту ссылку активной
-    $('.customHeader__menu_1 .menu1__link').removeClass('menu1__link_active');
+    $(this).parent().find('.menu1__link').removeClass('menu1__link_active');
     $(this).addClass('menu1__link_active');
     // скрываю меню 3 уровня
     $('.customHeader__menu_3').addClass('h-hide');

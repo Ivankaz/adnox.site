@@ -67,7 +67,18 @@ function initCustomHeader() {
     let submenu = $('.customHeader__mobile [data-submenu='+submenuId+']');
 
     // показываю меню 3 уровня
-    $(submenu).removeClass('h-hide').animate({'max-width': '100%'}, 500);
+    $(submenu).removeClass('h-hide').animate({'max-width': '100%', 'opacity': 1}, 500);
+  });
+
+  // если кликнули по кнопке "Назад" в меню 3 уровня
+  $('.customHeader__mobile .body__menu_3 .body__prev').click(function() {
+    let submenu = $(this).parents('.body__menu')[0];
+
+    // скрываю меню 3 уровня
+    $(submenu).animate({'width': 0, 'opacity': 0}, 500);
+    let timeout = setTimeout(function() {
+      $(submenu).addClass('h-hide').css({'width': '100%', 'max-width': 0});
+    }, 600);
   });
 
   // показать мобильное меню
@@ -82,9 +93,12 @@ function initCustomHeader() {
     let timeout = setTimeout(function() {
       $('.customHeader__mobile .mobile__body').addClass('h-hide');
 
+      // скрываю мобильные меню 3 уровня
+      $('.customHeader__mobile .body__menu_3').addClass('h-hide').css({'width': '100%', 'max-width': 0, 'opacity': 0});
+
       // скрываю мобильное поле поиска
       hideMobileSearch();
-    }, 500);
+    }, 600);
   }
 
   // показать мобильный поиск

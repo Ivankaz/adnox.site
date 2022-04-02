@@ -74,6 +74,13 @@ function initCustomHeader() {
       $('.customHeader__mobile .mobile__body').addClass('h-hide');
     }, 500);
   }
+
+  // показать мобильный поиск
+  window.showMobileSearch = function() {
+    $('.customHeader__mobile .mobile__body').removeClass('h-hide');
+    $('.customHeader__mobile .mobile__body .body__wrap').css('height', 'initial').animate({'max-width': '100%', 'padding': '20px 20px 0px 20px'}, 300);
+    $('.customHeader__mobile .mobile__body .body__menu').addClass('h-hide');
+  }
 }
 
 // загружаю jQuery, если он ещё не загружен

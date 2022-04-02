@@ -60,6 +60,12 @@ function initCustomHeader() {
     // обновляю меню 3 уровня
     eventUpdatedActiveLink(this);
   });
+
+  // показать мобильное меню
+  window.showMobileMenu = function() {
+    $('.customHeader__mobile .mobile__body').removeClass('h-hide');
+    $('.customHeader__mobile .mobile__body .body__wrap').animate({'max-width': '374px', 'padding': '20px'}, 500);
+  }
 }
 
 // загружаю jQuery, если он ещё не загружен

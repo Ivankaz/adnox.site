@@ -346,7 +346,7 @@
   <header class="customHeader customHeader__mobile">
     <div class="customHeader__menu mobile__top">
       <div class="menu__buttons">
-        <button class="buttons__button">
+        <button class="buttons__button" onclick="showMobileMenu()">
           <svg width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 17.5H0M20 9.5H0M20 1.5H0" stroke="#000" stroke-miterlimit="10"/>
           </svg>
@@ -377,8 +377,8 @@
         </a>
       </div>
     </div>
-    <div class="mobile__body">
-      <div class="body__wrap">
+    <div class="mobile__body h-hide">
+      <div class="body__wrap" style="max-width: 0; padding: 0">
         <div class="body__top">
           <form class="body__search">
             <button class="search__button">

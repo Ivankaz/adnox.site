@@ -24,7 +24,7 @@ function initCustomHeader() {
       // изменяю отступы у верхнего меню
       $('.customHeader__menu_1').addClass('menu1_scroll');
       // перемещаю кнопки в меню верхнего уровня
-      $('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_1');
+      //$('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_1');
     } else {
       $('.customHeader__menu_2 .js-submenu').addClass('h-hide');
 
@@ -37,7 +37,7 @@ function initCustomHeader() {
 
       $('.customHeader__menu_2, .customHeader__menu_2 .js-submenu'+activeSubmenuSelector).removeClass('h-hide');
       $('.customHeader__menu_1').removeClass('menu1_scroll');
-      $('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_2');
+      //$('.customHeader__desktop .menu__buttons').detach().appendTo('.customHeader__menu_2');
     }
   });
 

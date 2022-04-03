@@ -302,8 +302,10 @@ body
     flex-direction: row
 
     &_1
-      gap: 40px
       padding: 30px 40px 10px
+
+      .menu__links
+        margin-right: 40px
 
     &_2
       justify-content: space-between
@@ -399,6 +401,8 @@ body
             padding: 0px 0px 3px 0px
 
     .menu__logo
+      margin-right: 40px
+
       img
         height: 36px
 
@@ -434,7 +438,9 @@ body
       flex-direction: column
       justify-content: center
       align-items: flex-start
-      flex-grow: 1
+      border-right: 1px solid #ddd
+      padding-right: 20px
+      margin-right: 20px
 
       .phone__row
         display: flex
@@ -480,7 +486,7 @@ body
     display: flex
     flex-direction: row
     flex: 1 1 auto
-    margin: 0
+    margin: 0 40px 0 0
     padding: 0
     align-items: center
     border: 1px solid #284184

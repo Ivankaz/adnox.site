@@ -428,12 +428,26 @@ body
       display: flex
       flex-direction: column
       justify-content: center
-      align-items: flex-end
+      align-items: flex-start
       flex-grow: 1
+
+      .phone__row
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 10px
+
+      .phone__icon
+        height: 16px
+        width: 16px
+
+      .phone__note
+        color: #989898
+        font-size: 14px
 
       .phone__link
         color: #989898
-        font-size: 14px
+        font-size: 16px
         line-height: 18px
         text-decoration: none
         cursor: pointer

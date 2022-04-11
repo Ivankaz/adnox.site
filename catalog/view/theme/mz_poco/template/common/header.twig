@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="{{ direction }}" lang="{{ lang }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+{% for attributes in metadata %}
+<meta {{ attributes }} />
+{% endfor %}
+<title>{{ title }}</title>
+<base href="{{ base }}" />
+{% if preloader_status %}
+<style>
+/* Style of page loader spinner */
+.preloader-spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 7rem;
+    height: 7rem;
+    display: none;
+}
+.preloader-spinner::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url("{{ spinner_url }}");
+}
+.preloader-spinner.active{
+    display: block;
+}
+.preloader-spinner.active ~ *{
+    visibility: hidden;
+    overflow: hidden;
+}
+</style>
+{% endif %}
+{#<link href="catalog/view/javascript/maza/javascript/outdatedbrowser/outdatedbrowser.min.css" type="text/css" rel="stylesheet" />#}
+
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+
+{% if mz_cdn %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% else %}
+<script src="catalog/view/javascript/maza/javascript/jquery/jquery-3.4.1.min.js"></script>
+{% endif %}
+
+{% for script in scripts %}
+<script src="{{ script }}" defer></script>
+{% endfor %}
+
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+
+<!--Custom code between head tag-->
+{% if code_in_head_tag %}
+{{ code_in_head_tag }}
+{% endif %}
+
+</head>
+<body class="{{ page_class }}" {% if preloader_status %}onload="finishPreloader()"{% endif %}>
+  {% if preloader_status %}
+  <div id="page-preloader" class="preloader-spinner active"></div>
+  {% endif %}
+  <div class="mz-pure-container">
+  {% if header_component %}{{ include(template_from_string(header_component)) }}{% endif %}
+  {{ page_component }}
+  <div class="mz-pure-overlay"></div>
+  <div id="container" class="mz-pure-pusher-container">
+    <header class="header">
+      {% if top_header %}
+      <div id="top-header">{{ include(template_from_string(top_header)) }}</div>
+      {% endif %}
+      {% if main_header %}
+      <div id="main-header">{{ include(template_from_string(main_header)) }}</div>
+      {% endif %}
+      {% if main_navigation %}
+      <div id="main-navigation">{{ include(template_from_string(main_navigation)) }}</div>
+      {% endif %}
+    </header>
+

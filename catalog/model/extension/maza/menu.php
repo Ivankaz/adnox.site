@@ -35,4 +35,69 @@ class ModelExtensionMazaMenu extends Model
 
         return $items_data;
     }
+
+    // возвращает вложенные категории
+    public function getChildrenCategories($categoryId = null)
+    {
+        $this->load->model('catalog/category');
+        $this->load->model('catalog/product');
+
+        $childrenData = array();
+
+        $children = $this->model_catalog_category->getCategories($categoryId);
+
+        foreach ($children as $child) {
+            $filter_data = array(
+                'filter_category_id'  => $child['category_id'],
+                'filter_sub_category' => true
+            );
+
+            $childData = $this->getChildrenCategories($child['category_id']);
+
+            $childrenData[] = array(
+                'id' => $child['category_id'],
+                'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+                'children' => $childData,
+                'href'  => $this->url->link('product/category', 'path=' . $categoryId . '_' . $child['category_id'])
+            );
+        }
+
+        // сортирую категории по возрастанию id
+        usort($childrenData, function ($a, $b) {
+            return ($a['id']-$b['id']);
+        });
+
+        return $childrenData;
+    }
+
+    // возвращает дерево категорий
+    public function getCategoryTree()
+    {
+        $this->load->model('catalog/category');
+        $this->load->model('catalog/product');
+
+        $categoryTree = array();
+
+        $categories = $this->model_catalog_category->getCategories(0);
+
+        foreach ($categories as $category) {
+            if ($category['top']) {
+                $childrenData = $this->getChildrenCategories($category['category_id']);
+
+                $categoryTree[] = array(
+                    'id' => $category['category_id'],
+                    'name'     => $category['name'],
+                    'children' => $childrenData,
+                    'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
+                );
+            }
+        }
+
+        // сортирую категории по возрастанию id
+        usort($categoryTree, function ($a, $b) {
+            return ($a['id']-$b['id']);
+        });
+
+        return $categoryTree;
+    }
 }

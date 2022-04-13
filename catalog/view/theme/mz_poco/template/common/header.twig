@@ -96,14 +96,13 @@
       <header class="customHeader customHeader__desktop">
         <div class="customHeader__menu customHeader__menu_1">
           <div class="menu__logo">
-            <a href="{{base }}"><img src="{{ logo }}" alt="Купить мебель в Краснодаре"></a>
+            <a href="{{ base }}"><img src="{{ logo }}" alt="Купить мебель в Краснодаре"></a>
           </div>
           <nav class="menu__links">
-            <a href="#" data-submenu-id="2_1" class="links__link menu1__link menu1__link_active">Товары</a>
-            <a href="#" data-submenu-id="2_2" class="links__link menu1__link">Комнаты</a>
-            <a href="#" class="links__link menu1__link">Магазины</a>
-            <a href="#" data-submenu-id="2_3" class="links__link menu1__link">Идеи и тренды</a>
-            <a href="#" data-submenu-id="2_4" class="links__link menu1__link">О компании</a>
+            {% for i1, category1 in categoryTree %}
+            {% set i1 = i1+1 %}
+            <a href="{{ category1['href'] }}" {% if category1['children'] != null %} data-submenu-id="2_{{ i1 }}" {% endif %} class="links__link menu1__link{% if i1 == 1 %} menu1__link_active{% endif %}">{{ category1['name'] }}</a>
+            {% endfor %}
           </nav>
           <form action="#" method="GET" class="menu__search">
             <input type="text" name="search" class="search__input" placeholder="Поиск по сайту">
@@ -189,117 +188,48 @@
           </nav>
         </div>
         <div class="customHeader__menu customHeader__menu_2">
-          <nav data-submenu="2_1" class="menu__links js-submenu">
-            <a href="#" data-submenu-id="3_1_1" class="links__link menu2__link">Акции</a>
-            <a href="#" data-submenu-id="3_1_2" class="links__link menu2__link">Диваны и кресла</a>
-            <a href="#" data-submenu-id="3_1_3" class="links__link menu2__link">Кровати и матрасы</a>
-            <a href="#" data-submenu-id="3_1_4" class="links__link menu2__link">Шкафы и стеллажи</a>
-            <a href="#" data-submenu-id="3_1_5" class="links__link menu2__link">Комоды и тумбы</a>
-            <a href="#" data-submenu-id="3_1_6" class="links__link menu2__link">Столы и стулья</a>
-            <a href="#" data-submenu-id="3_1_7" class="links__link menu2__link">Ковры и текстиль</a>
+          {% for i1, category1 in categoryTree %}
+          {% set i1 = i1+1 %}
+          {% if category1['children'] != null %}
+          <nav data-submenu="2_{{ i1 }}" class="menu__links js-submenu{% if i1 != 1 %} h-hide{% endif %}">
+            {% for i2, category2 in category1['children'] %}
+            {% set i2 = i2+1 %}
+            <a href="{{ category2['href'] }}" {% if category2['children'] != null %} data-submenu-id="3_{{ i1 }}_{{ i2 }}" {% endif %} class="links__link menu2__link">{{ category2['name'] }}</a>
+            {% endfor %}
           </nav>
-          <nav data-submenu="2_2" class="menu__links js-submenu h-hide">
-            <a href="#" data-submenu-id="3_2_1" class="links__link menu2__link">Гостиная</a>
-            <a href="#" data-submenu-id="3_2_2" class="links__link menu2__link">Спальня</a>
-            <a href="#" data-submenu-id="3_2_3" class="links__link menu2__link">Прихожая</a>
-            <a href="#" data-submenu-id="3_2_4" class="links__link menu2__link">Кухня</a>
-            <a href="#" data-submenu-id="3_2_5" class="links__link menu2__link">Домашний офис</a>
-            <a href="#" data-submenu-id="3_2_6" class="links__link menu2__link">Детская</a>
-            <a href="#" data-submenu-id="3_2_7" class="links__link menu2__link">Студия</a>
-          </nav>
-          <nav data-submenu="2_3" class="menu__links js-submenu h-hide">
-            <a href="#" data-submenu-id="3_3_1" class="links__link menu2__link">Рум-тур по дому</a>
-            <a href="#" data-submenu-id="3_3_2" class="links__link menu2__link">Дизайн-проекты</a>
-            <a href="#" data-submenu-id="3_3_3" class="links__link menu2__link">Полезно знать</a>
-            <a href="#" data-submenu-id="3_3_4" class="links__link menu2__link">Интерьер и декор</a>
-            <a href="#" data-submenu-id="3_3_5" class="links__link menu2__link">Мебель в деталях</a>
-          </nav>
-          <nav data-submenu="2_4" class="menu__links js-submenu h-hide">
-            <a href="#" data-submenu-id="3_4_1" class="links__link menu2__link">О Divan.ru</a>
-            <a href="#" data-submenu-id="3_4_2" class="links__link menu2__link">Доставка и оплата</a>
-            <a href="#" data-submenu-id="3_4_3" class="links__link menu2__link">Магазины</a>
-            <a href="#" data-submenu-id="3_4_4" class="links__link menu2__link">Контакты</a>
-            <a href="#" data-submenu-id="3_4_5" class="links__link menu2__link">Divan.Club</a>
-            <a href="#" data-submenu-id="3_4_6" class="links__link menu2__link">Для бизнеса</a>
-          </nav>
+          {% endif %}
+          {% endfor %}
         </div>
-        <div data-submenu="3_1_1" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
+        {% for i1, category1 in categoryTree %}
+        {% set i1 = i1+1 %}
+        {% if category1['children'] != null %}
+        {% for i2, category2 in category1['children'] %}
+        {% set i2 = i2+1 %}
+        <div data-submenu="3_{{ i1 }}_{{ i2 }}" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
           <nav class="menu__links links__columns">
+            {% if category2['children'] != null %}
+            {% for i3, category3 in category2['children'] %}
+            {% set i3 = i3+1 %}
             <ul class="links__column">
               <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Действующие акции</a>
+                <a href="{{ category3['href'] }}" class="row__link row__link_title">{{ category3['name'] }}</a>
               </li>
+              {% if category3['children'] != null %}
+              {% for i4, category4 in category3['children'] %}
+              {% set i4 = i4+1 %}
               <li class="column__row">
-                <a href="#" class="row__link row__link_item">Extra Sale</a>
+                <a href="{{ category4['href'] }}" class="row__link row__link_item">{{ category4['name'] }}</a>
               </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Распродажа мебели</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Ликвидация</a>
-              </li>
+              {% endfor %}
+              {% endif %}
+              <!--
               <li class="column__row column__row_bottom">
                 <a href="#" class="row__link row__link_bottom">Все акции</a>
               </li>
+            -->
             </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Скидки до 50%</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Столы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кресла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Стулья</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Тумбы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Матрасы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прихожая</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Гостиная</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Спальня</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">TRENDs</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Гостиная</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Спальня</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кабинет</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прихожая</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Все товары</a>
-              </li>
-            </ul>
+            {% endfor %}
+            {% endif %}
           </nav>
           <div class="menu__banner">
             <a class="banner" href="#">
@@ -312,425 +242,9 @@
             </a>
           </div>
         </div>
-        <div data-submenu="3_1_2" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прямые диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Угловые диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Модульные диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кушетки</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Конструктор диванов</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Диваны по назначению</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Диваны для сна</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Мини-диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Дизайнерские диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Диваны-кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Детские диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Ортопедические диваны</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Офисные диваны</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Распродажа диванов</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Кресла и пуфы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кресла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Раскладные кресла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Офисные кресла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Бескаркасная мебель</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Пуфы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Банкетки</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Конструктор кресел</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Аксессуары для диванов</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Топперы для диванов</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Декоративные подушки</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Пледы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Покрывала</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Средства по уходу за обивкой</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Заказать образцы тканей</a>
-              </li>
-            </ul>
-
-          </nav>
-          <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-1.jpg" alt="Баннер">
-              <div class="banner__body">
-                <div class="body__title">Сложно выбрать? Создай сам!</div>
-                <div class="body__content">Скидки на товары из конструктора до -10%</div>
-                <div class="body__link">Выбрать</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div data-submenu="3_1_3" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Мягкие кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Корпусные кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Односпальные кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Двуспальные кровати</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кровати с подъемным механизмом</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Детские кровати</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Конструктор кроватей</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все матрасы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Матрасы жесткие</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Средней жесткости</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Мягкие матрасы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Разносторонние матрасы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Беспружинные матрасы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Пружинные матрасы</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Sleeper</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Товары для спальни</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Комоды</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прикроватные тумбы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Туалетные столики</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Банкетки</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Пуфы</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Товары для сна</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Покрывала</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Подушки</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Одеяла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Топперы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Защитные чехлы для матрасов</a>
-              </li>
-              <li class="column__row column__row_bottom">
-                <a href="#" class="row__link row__link_bottom">Заказать образцы тканей</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-1.jpg" alt="Баннер">
-              <div class="banner__body">
-                <div class="body__title">Сложно выбрать? Создай сам!</div>
-                <div class="body__content">Скидки на товары из конструктора до -10%</div>
-                <div class="body__link">Выбрать</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div data-submenu="3_1_4" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Мебель для хранения</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Стеллажи</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Полки</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прихожие</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Гардеробные системы</a>
-              </li>
-
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Распашные шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Шкафы-купе</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Угловые шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Витрины</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Книжные шкафы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Детские шкафы</a>
-              </li>
-
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Мебель для ТВ</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Стенки</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Модульные гостиные</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Тумбы для ТВ</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-2.png" alt="Баннер">
-              <div class="banner__body">
-                <div class="body__title">TRENDs</div>
-                <div class="body__content">Шкафы и стеллажи: актуальные дизайнерские модели</div>
-                <div class="body__link">Смотреть все</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div data-submenu="3_1_5" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все комоды</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Узкие комоды</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Широкие комоды</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Детские комоды</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все тумбы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Прикроватные тумбы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Тумбы для обуви</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Тумбы для ТВ</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div data-submenu="3_1_6" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все столы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Обеденные столы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Журнальные столики</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Туалетные столики</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Все стулья</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Кухонные стулья</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Мягкие стулья</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Барные стулья</a>
-              </li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title">
-                <a href="#" class="row__link row__link_title">Домашний офис</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Рабочие столы</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Компьютерные кресла</a>
-              </li>
-              <li class="column__row">
-                <a href="#" class="row__link row__link_item">Рабочие стулья</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-3.png" alt="Баннер">
-              <div class="banner__body">
-                <div class="body__title">TRENDs</div>
-                <div class="body__content">Столы и стулья: актуальные дизайнерские модели</div>
-                <div class="body__link">Смотреть все</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div data-submenu="3_1_7" class="customHeader__menu customHeader__menu_3 js-submenu h-hide">
-          <nav class="menu__links links__columns">
-            <ul class="links__column">
-              <li class="column__row column__row_title"><a href="#" class="row__link row__link_title">Все ковры</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Ковры с легкой чисткой</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Ковры с принтом</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Однотонные ковры</a></li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title"><a href="#" class="row__link row__link_title">Текстиль для дома</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Декоративные подушки</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Пледы</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Покрывала</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Топперы для диванов</a></li>
-            </ul>
-            <ul class="links__column">
-              <li class="column__row column__row_title"><a href="#" class="row__link row__link_title">Текстиль для сна</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Подушки для сна</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Одеяла</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Топперы</a></li>
-              <li class="column__row"><a href="#" class="row__link row__link_item">Защитные чехлы для матрасов</a></li>
-            </ul>
-
-          </nav>
-          <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-4.png" alt="Баннер">
-              <div class="banner__body">
-                <div class="body__title">TRENDs</div>
-                <div class="body__content">Ковры и текстиль: актуальные дизайнерские модели</div>
-                <div class="body__link">Смотреть все</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
       </header>
 
       <header class="customHeader customHeader__mobile">

@@ -80,6 +80,9 @@ class ControllerCommonHeader extends Controller
         $data['cart'] = $this->load->controller('common/cart');
         $data['menu'] = $this->load->controller('common/menu');
 
+        $this->load->model('extension/maza/menu');
+        $data['categoryTree'] = $this->model_extension_maza_menu->getCategoryTree();
+
         return $this->load->view('common/header', $data);
     }
 }

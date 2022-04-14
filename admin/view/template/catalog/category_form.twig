@@ -132,6 +132,36 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label">{{ entry_banner_image }}</label>
+                <div class="col-sm-10"><a href="" id="thumb-banner_image" data-toggle="image" class="img-thumbnail"><img src="{{ banner_thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a>
+                  <input type="hidden" name="banner_data[image]" value="{{ banner_data['image'] }}" id="input-banner_image" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-banner_title">{{ entry_banner_title }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="banner_data[title]" value="{{ banner_data['title'] }}" placeholder="{{ entry_banner_title }}" id="input-banner_title" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-banner_content">{{ entry_banner_content }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="banner_data[content]" value="{{ banner_data['content'] }}" placeholder="{{ entry_banner_content }}" id="input-banner_content" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-banner_link">{{ entry_banner_link_text }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="banner_data[link_text]" value="{{ banner_data['link_text'] }}" placeholder="{{ entry_banner_link_text }}" id="input-banner_link_text" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-banner_link">{{ entry_banner_link }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="banner_data[link]" value="{{ banner_data['link'] }}" placeholder="{{ entry_banner_link }}" id="input-banner_link" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-top"><span data-toggle="tooltip" title="{{ help_top }}">{{ entry_top }}</span></label>
                 <div class="col-sm-10">
                   <div class="checkbox">

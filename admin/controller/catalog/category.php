@@ -456,6 +456,29 @@ class ControllerCatalogCategory extends Controller
             $data['thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
         }
 
+        // устанавливаю данные баннера редактируемой категории
+        if (isset($category_info['banner_data'])) {
+            $category_info['banner_data'] = json_decode($category_info['banner_data'], true);
+        } else {
+            $category_info['banner_data'] = [
+            'image' => '',
+            'title' => '',
+            'content' => '',
+            'link_text' => '',
+            'link' => '',
+          ];
+        }
+        $data['banner_data'] = $category_info['banner_data'];
+
+        // генерирую превьюшку для картинки баннера
+        if (isset($this->request->post['banner_data']['image']) && is_file(DIR_IMAGE . $this->request->post['banner_data']['image'])) {
+            $data['banner_thumb'] = $this->model_tool_image->resize($this->request->post['banner_data']['image'], 100, 100);
+        } elseif (!empty($category_info) && is_file(DIR_IMAGE . $category_info['banner_data']['image'])) {
+            $data['banner_thumb'] = $this->model_tool_image->resize($category_info['banner_data']['image'], 100, 100);
+        } else {
+            $data['banner_thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+        }
+
         $data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 
         if (isset($this->request->post['top'])) {

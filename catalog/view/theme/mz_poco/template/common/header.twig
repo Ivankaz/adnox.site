@@ -214,16 +214,18 @@
             {% endfor %}
             {% endif %}
           </nav>
+          {% if (category2['bannerData'] != null) %}
           <div class="menu__banner">
-            <a class="banner" href="#">
-              <img class="banner__image" src="/catalog/view/theme/mz_poco/image/banner-1.jpg" alt="Баннер">
+            <a class="banner" href="{{ category2['bannerData']['link'] }}">
+              <img class="banner__image" src="http://adnox.site/image/{{ category2['bannerData']['image'] }}" alt="{{ category2['bannerData']['title'] }}">
               <div class="banner__body">
-                <div class="body__title">Сложно выбрать? Создай сам!</div>
-                <div class="body__content">Скидки на товары из конструктора до -10%</div>
-                <div class="body__link">Выбрать</div>
+                <div class="body__title">{{ category2['bannerData']['title'] }}</div>
+                <div class="body__content">{{ category2['bannerData']['content'] }}</div>
+                <div class="body__link">{{ category2['bannerData']['link_text'] }}</div>
               </div>
             </a>
           </div>
+          {% endif %}
         </div>
         {% endfor %}
         {% endif %}

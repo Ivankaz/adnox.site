@@ -54,11 +54,17 @@ class ModelExtensionMazaMenu extends Model
 
             $childData = $this->getChildrenCategories($child['category_id']);
 
+            $bannerData = null;
+            if ($child['banner_data'] != null) {
+                $bannerData = json_decode($child['banner_data'], true);
+            }
+
             $childrenData[] = array(
                 'id' => $child['category_id'],
                 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
                 'children' => $childData,
-                'href'  => $this->url->link('product/category', 'path=' . $categoryId . '_' . $child['category_id'])
+                'href'  => $this->url->link('product/category', 'path=' . $categoryId . '_' . $child['category_id']),
+                'bannerData' => $bannerData,
             );
         }
 

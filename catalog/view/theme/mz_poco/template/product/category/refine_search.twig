@@ -1,0 +1,36 @@
+{% verbatim %}{% if categories %}{% endverbatim %}
+{% if title %}
+<h4 class="h{{ title }} content-title">{% verbatim %}{{ text_refine }}{% endverbatim %}</h4>
+{% endif %}
+
+{% if design == 'grid' %}
+<div class="row">
+{% verbatim %}{% for category in categories %}{% endverbatim %}
+  <a class="mb-2 col-xl-{{ (12/column_xl)|replace({'.':'_'}) }} col-lg-{{ (12/column_lg)|replace({'.':'_'}) }} col-md-{{ (12/column_md)|replace({'.':'_'}) }} col-sm-{{ (12/column_sm)|replace({'.':'_'}) }} col-{{ (12/column_xs)|replace({'.':'_'}) }}" href="{% verbatim %}{{ category.href }}{% endverbatim %}">
+    {% if show_content != 'text' %}
+    <figure class="figure m-0 w-100">
+      {% verbatim %}{% if category.image %}{% endverbatim %}
+      <img class="figure-img img-fluid" src="{% verbatim %}{{ category.image }}{% endverbatim %}" alt="{% verbatim %}{{ category.name }}{% endverbatim %}" >
+      {% verbatim %}{% endif %}{% endverbatim %}
+      {% if show_content != 'image' %}
+      <figcaption class="figure-caption mb-2">{% verbatim %}{{ category.name }}{% endverbatim %}</figcaption>
+      {% endif %}
+    </figure>
+    {% else %}
+    {% verbatim %}{{ category.name }}{% endverbatim %}
+    {% endif %}
+  </a>
+{% verbatim %}{% endfor %}{% endverbatim %}
+</div>
+
+{% else %}
+<div class="list-group">
+{% verbatim %}{% for category in categories %}{% endverbatim %}
+  <a class="list-group-item list-group-item-action" href="{% verbatim %}{{ category.href }}{% endverbatim %}">
+    {% verbatim %}{{ category.name }}{% endverbatim %}
+  </a>
+{% verbatim %}{% endfor %}{% endverbatim %}
+</div>
+{% endif %}
+
+{% verbatim %}{% endif %}{% endverbatim %}

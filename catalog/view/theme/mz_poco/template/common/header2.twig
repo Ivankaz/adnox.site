@@ -108,8 +108,7 @@
             <a href="{{ category1['href'] }}" {% if category1['children'] != null %} data-submenu-id="2_{{ i1 }}" {% endif %} class="links__link menu1__link{% if i1 == 1 %} menu1__link_active{% endif %}">{{ category1['name'] }}</a>
             {% endfor %}
 
-            <!-- Статичные ссылки 1 уровень (на компьютере) -->
-            <a href="#" data-submenu-id="2_1" class="links__link menu1__link">Идеи и тренды</a>
+            <!-- Статичные ссылки 1 уровень -->
             <a href="#" data-submenu-id="2_0" class="links__link menu1__link">О компании</a>
           </nav>
           {{ search }}
@@ -149,15 +148,25 @@
             </div>
           </div>
           <nav class="menu__buttons">
-            <a href="{{ wishlist }}" class="buttons__button" title="Избранное">
+            <a href="#" class="buttons__button" title="Избранное">
               <svg class="icon" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.1462 7C6.67925 7 4.5 10.1959 4.5 12.7732C4.5 18.4433 10.6415 23.201 15 26.5C19.3585 23.201 25.5 18.4433 25.5 12.7732C25.5 10.1959 23.3208 7 19.8538 7C17.8726 7 16.1887 8.64952 15 10.1959C13.7123 8.64952 12.1274 7 10.1462 7Z">
                 </path>
               </svg>
-              <!--<span class="button__total">0</span>-->
+              <span class="button__total">0</span>
             </a>
-            {{ cart }}
+            <a href="#" class="buttons__button" title="Корзина">
+              <svg class="icon" style="fill: #000; stroke-width: 0px;" width="26" height="26" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.996,8.91C27.949,8.395,27.519,8,27,8h-5V6c0-3.309-2.69-6-6-6c-3.309,0-6,2.691-6,6v2H5
+                C4.482,8,4.051,8.395,4.004,8.91l-2,22c-0.025,0.279,0.068,0.557,0.258,0.764C2.451,31.882,2.719,32,3,32h26
+                c0.281,0,0.549-0.118,0.738-0.326c0.188-0.207,0.283-0.484,0.258-0.764L27.996,8.91z M12,6c0-2.206,1.795-4,4-4s4,1.794,4,4v2h-8
+                V6z M4.096,30l1.817-20H10v2.277C9.404,12.624,9,13.262,9,14c0,1.104,0.896,2,2,2s2-0.896,2-2c0-0.738-0.404-1.376-1-1.723V10h8
+                v2.277c-0.596,0.347-1,0.984-1,1.723c0,1.104,0.896,2,2,2c1.104,0,2-0.896,2-2c0-0.738-0.403-1.376-1-1.723V10h4.087l1.817,20
+                H4.096z"></path>
+              </svg>
+              <span class="button__total">0</span>
+            </a>
           </nav>
         </div>
         <div class="customHeader__menu customHeader__menu_2">
@@ -173,19 +182,13 @@
           {% endif %}
           {% endfor %}
 
-          <!-- Статичные ссылки 2 уровень (на компьютере) -->
-          <nav data-submenu="2_1" class="menu__links js-submenu h-hide">
-            <a href="/dizajn-proekty" class="links__link menu2__link">Дизайн-проекты</a>
-            <a href="/polezno-znat" class="links__link menu2__link">Полезно знать</a>
-            <a href="/interjer-i-dekor" class="links__link menu2__link">Интерьер и декор</a>
-            <a href="/mebel-v-detalyah" class="links__link menu2__link">Мебель в деталях</a>
-          </nav>
+          <!-- Статичные ссылки 2 уровень -->
           <nav data-submenu="2_0" class="menu__links js-submenu h-hide">
-            <a href="/index.php?route=product/special" class="links__link menu2__link">Акции</a>
-            <a href="/index.php?route=extension/maza/blog/home" class="links__link menu2__link">Блог</a>
-            <a href="/index.php?route=information/information&information_id=4" class="links__link menu2__link">О нас</a>
-            <a href="/index.php?route=product/manufacturer" class="links__link menu2__link">Производители</a>
-            <a href="/index.php?route=extension/maza/testimonial" class="links__link menu2__link">Рекомендации</a>
+            <a href="/index.php?route=product/special" data-submenu-id="0_1_1" class="links__link menu2__link">Акции</a>
+            <a href="/index.php?route=extension/maza/blog/home" data-submenu-id="0_1_1" class="links__link menu2__link">Блог</a>
+            <a href="/index.php?route=information/information&information_id=4" data-submenu-id="0_1_1" class="links__link menu2__link">О нас</a>
+            <a href="/index.php?route=product/manufacturer" data-submenu-id="0_1_1" class="links__link menu2__link">Производители</a>
+            <a href="/index.php?route=extension/maza/testimonial" data-submenu-id="0_1_1" class="links__link menu2__link">Рекомендации</a>
           </nav>
         </div>
         {% for i1, category1 in categoryTree %}
@@ -260,15 +263,25 @@
             <a href="{{ base }}"><img src="{{ logo }}" alt="Купить мебель в Краснодаре"></a>
           </div>
           <div class="menu__buttons">
-            <a href="{{ wishlist }}" class="buttons__button" title="Избранное">
+            <a href="#" class="buttons__button" title="Избранное">
               <svg class="icon" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.1462 7C6.67925 7 4.5 10.1959 4.5 12.7732C4.5 18.4433 10.6415 23.201 15 26.5C19.3585 23.201 25.5 18.4433 25.5 12.7732C25.5 10.1959 23.3208 7 19.8538 7C17.8726 7 16.1887 8.64952 15 10.1959C13.7123 8.64952 12.1274 7 10.1462 7Z">
                 </path>
               </svg>
-              <!--<span class="button__total">0</span>-->
+              <span class="button__total">0</span>
             </a>
-            {{ cart }}
+            <a href="#" class="buttons__button" title="Корзина">
+              <svg class="icon" style="fill: #000; stroke-width: 0px;" width="26" height="26" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.996,8.91C27.949,8.395,27.519,8,27,8h-5V6c0-3.309-2.69-6-6-6c-3.309,0-6,2.691-6,6v2H5
+                C4.482,8,4.051,8.395,4.004,8.91l-2,22c-0.025,0.279,0.068,0.557,0.258,0.764C2.451,31.882,2.719,32,3,32h26
+                c0.281,0,0.549-0.118,0.738-0.326c0.188-0.207,0.283-0.484,0.258-0.764L27.996,8.91z M12,6c0-2.206,1.795-4,4-4s4,1.794,4,4v2h-8
+                V6z M4.096,30l1.817-20H10v2.277C9.404,12.624,9,13.262,9,14c0,1.104,0.896,2,2,2s2-0.896,2-2c0-0.738-0.404-1.376-1-1.723V10h8
+                v2.277c-0.596,0.347-1,0.984-1,1.723c0,1.104,0.896,2,2,2c1.104,0,2-0.896,2-2c0-0.738-0.403-1.376-1-1.723V10h4.087l1.817,20
+                H4.096z"></path>
+              </svg>
+              <span class="button__total">0</span>
+            </a>
           </div>
         </div>
         <div class="mobile__body h-hide">
@@ -295,10 +308,6 @@
                 {% set i1 = i1+1 %}
                 <a href="#" {% if category1['children'] != null %} data-submenu-id="2_{{ i1 }}" {% endif %} class="links__link menu1__link{% if i1 == 1 %} menu1__link_active{% endif %}">{{ category1['name'] }}</a>
                 {% endfor %}
-
-                <!-- Статичные ссылки 1 уровень (на мобильном) -->
-                <a href="#" data-submenu-id="2_1" class="links__link menu1__link">Идеи и тренды</a>
-                <a href="#" data-submenu-id="2_0" class="links__link menu1__link">О компании</a>
               </nav>
             </div>
             <div class="body__menu body__menu_2">
@@ -316,46 +325,6 @@
               </nav>
               {% endif %}
               {% endfor %}
-
-              <!-- Статичные ссылки 2 уровень (на мобильном) -->
-              <nav data-submenu="2_1" class="menu__links menu__links_menu2 js-submenu h-hide">
-                <div class="links__row">
-                  <a href="/dizajn-proekty" class="row__link row__link_withSubmenu">Дизайн-проекты</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/polezno-znat" class="row__link row__link_withSubmenu">Полезно знать</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/interjer-i-dekor" class="row__link row__link_withSubmenu">Интерьер и декор</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/mebel-v-detalyah" class="row__link row__link_withSubmenu">Мебель в деталях</a>
-                </div>
-              </nav>
-              <nav data-submenu="2_0" class="menu__links menu__links_menu2 js-submenu h-hide">
-                <div class="links__row">
-                  <a href="/index.php?route=product/special" class="row__link row__link_withSubmenu">Акции</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/index.php?route=extension/maza/blog/home" class="row__link row__link_withSubmenu">Блог</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/index.php?route=information/information&information_id=4" class="row__link row__link_withSubmenu">О нас</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/index.php?route=product/manufacturer" class="row__link row__link_withSubmenu">Производители</a>
-                </div>
-
-                <div class="links__row">
-                  <a href="/index.php?route=extension/maza/testimonial" class="row__link row__link_withSubmenu">Рекомендации</a>
-                </div>
-              </nav>
             </div>
             {% for i1, category1 in categoryTree %}
             {% set i1 = i1+1 %}

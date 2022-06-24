@@ -76,8 +76,8 @@ class ControllerCommonHeader extends Controller
 
         $data['language'] = $this->load->controller('common/language');
         $data['currency'] = $this->load->controller('common/currency');
-        $data['search'] = $this->load->controller('common/search');
-        $data['cart'] = $this->load->controller('common/cart');
+        $data['search'] = $this->load->controller('extension/mz_widget/search');
+        $data['cart'] = $this->load->controller('extension/mz_widget/cart');
         $data['menu'] = $this->load->controller('common/menu');
 
         $this->load->model('extension/maza/menu');

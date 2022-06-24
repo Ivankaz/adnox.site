@@ -1,0 +1,10 @@
+<form action="{{ action }}" method="GET" class="menu__search">
+  {% if 'route' in action %}<input type="hidden" name="route" value="{{ route }}" />{% endif %}
+  <input type="text" name="search" value="{{ search }}" class="search__input" {% if autocomplete %}data-autocomplete="{{ autocomplete }}" data-autocomplete_route="{{ autocomplete_route }}" {% endif %} placeholder="{{ placeholder }}">
+  <button class="search__button" type="submit" aria-label="Искать">
+    <svg width="21" height="21" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18.6963" y1="17.9697" x2="25.6963" y2="24.9697" stroke-width="2" stroke="currentColor"></line>
+      <circle cx="12.834" cy="12.5" r="8" stroke-width="2" stroke="currentColor" fill="transparent"></circle>
+    </svg>
+  </button>
+</form>

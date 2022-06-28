@@ -61,7 +61,8 @@
   <link href="{{ link.href }}" rel="{{ link.rel }}" />
   {% endfor %}
   <link rel="stylesheet" href="/catalog/view/theme/mz_poco/stylesheet/css/customHeader.css">
-
+  <link rel="stylesheet" href="/catalog/view/theme/mz_poco/stylesheet/css/customSlider.css">
+  
   {% if mz_cdn %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   {% else %}
@@ -186,6 +187,7 @@
             <a href="/index.php?route=information/information&information_id=4" class="links__link menu2__link">О нас</a>
             <a href="/index.php?route=product/manufacturer" class="links__link menu2__link">Производители</a>
             <a href="/index.php?route=extension/maza/testimonial" class="links__link menu2__link">Рекомендации</a>
+			<a href="/index.php?route=information/contact" class="links__link menu2__link">Контакты</a>
           </nav>
         </div>
         {% for i1, category1 in categoryTree %}

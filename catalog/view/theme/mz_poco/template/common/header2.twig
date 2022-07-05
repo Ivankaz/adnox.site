@@ -109,6 +109,7 @@
             {% endfor %}
 
             <!-- Статичные ссылки 1 уровень -->
+			      <a href="#" data-submenu-id="2_9" class="links__link menu1__link">Идеи и тренды</a>
             <a href="#" data-submenu-id="2_0" class="links__link menu1__link">О компании</a>
           </nav>
           {{ search }}
@@ -183,6 +184,13 @@
           {% endfor %}
 
           <!-- Статичные ссылки 2 уровень -->
+		      <nav data-submenu="2_9" class="menu__links js-submenu h-hide">
+            <a href="/dizajn-proekty" class="links__link menu2__link">Дизайн-проекты</a>
+            <a href="/polezno-znat" class="links__link menu2__link">Полезно знать</a>
+            <a href="/interjer-i-dekor" class="links__link menu2__link">Интерьер и декор</a>
+            <a href="/mebel-v-detalyah" class="links__link menu2__link">Мебель в деталях</a>
+          </nav>
+		  
           <nav data-submenu="2_0" class="menu__links js-submenu h-hide">
             <a href="/index.php?route=product/special" data-submenu-id="0_1_1" class="links__link menu2__link">Акции</a>
             <a href="/index.php?route=extension/maza/blog/home" data-submenu-id="0_1_1" class="links__link menu2__link">Блог</a>

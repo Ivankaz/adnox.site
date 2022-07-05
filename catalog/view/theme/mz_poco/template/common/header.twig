@@ -61,7 +61,8 @@
   <link href="{{ link.href }}" rel="{{ link.rel }}" />
   {% endfor %}
   <link rel="stylesheet" href="/catalog/view/theme/mz_poco/stylesheet/css/customHeader.css">
-
+  <link rel="stylesheet" href="/catalog/view/theme/mz_poco/stylesheet/css/customSlider.css">
+  
   {% if mz_cdn %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   {% else %}
@@ -109,7 +110,7 @@
             {% endfor %}
 
             <!-- Статичные ссылки 1 уровень (на компьютере) -->
-            <a href="#" data-submenu-id="2_1" class="links__link menu1__link">Идеи и тренды</a>
+            <a href="#" data-submenu-id="2_9" class="links__link menu1__link">Идеи и тренды</a>
             <a href="#" data-submenu-id="2_0" class="links__link menu1__link">О компании</a>
           </nav>
           {{ search }}
@@ -174,7 +175,7 @@
           {% endfor %}
 
           <!-- Статичные ссылки 2 уровень (на компьютере) -->
-          <nav data-submenu="2_1" class="menu__links js-submenu h-hide">
+          <nav data-submenu="2_9" class="menu__links js-submenu h-hide">
             <a href="/dizajn-proekty" class="links__link menu2__link">Дизайн-проекты</a>
             <a href="/polezno-znat" class="links__link menu2__link">Полезно знать</a>
             <a href="/interjer-i-dekor" class="links__link menu2__link">Интерьер и декор</a>
@@ -186,6 +187,7 @@
             <a href="/index.php?route=information/information&information_id=4" class="links__link menu2__link">О нас</a>
             <a href="/index.php?route=product/manufacturer" class="links__link menu2__link">Производители</a>
             <a href="/index.php?route=extension/maza/testimonial" class="links__link menu2__link">Рекомендации</a>
+			<a href="/index.php?route=information/contact" class="links__link menu2__link">Контакты</a>
           </nav>
         </div>
         {% for i1, category1 in categoryTree %}
@@ -297,7 +299,7 @@
                 {% endfor %}
 
                 <!-- Статичные ссылки 1 уровень (на мобильном) -->
-                <a href="#" data-submenu-id="2_1" class="links__link menu1__link">Идеи и тренды</a>
+                <a href="#" data-submenu-id="2_9" class="links__link menu1__link">Идеи и тренды</a>
                 <a href="#" data-submenu-id="2_0" class="links__link menu1__link">О компании</a>
               </nav>
             </div>
@@ -318,7 +320,7 @@
               {% endfor %}
 
               <!-- Статичные ссылки 2 уровень (на мобильном) -->
-              <nav data-submenu="2_1" class="menu__links menu__links_menu2 js-submenu h-hide">
+              <nav data-submenu="2_9" class="menu__links menu__links_menu2 js-submenu h-hide">
                 <div class="links__row">
                   <a href="/dizajn-proekty" class="row__link row__link_withSubmenu">Дизайн-проекты</a>
                 </div>

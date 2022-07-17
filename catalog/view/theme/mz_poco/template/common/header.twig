@@ -107,6 +107,9 @@
             {% for i1, category1 in categoryTree %}
             {% set i1 = i1+1 %}
             <a href="{{ category1['href'] }}" {% if category1['children'] != null %} data-submenu-id="2_{{ i1 }}" {% endif %} class="links__link menu1__link{% if i1 == 1 %} menu1__link_active{% endif %}">{{ category1['name'] }}</a>
+              {% if i1 == 1 %}
+                <a href="#" data-submenu-id="2_8" class="links__link menu1__link">Комнаты</a>
+              {% endif %}
             {% endfor %}
 
             <!-- Статичные ссылки 1 уровень (на компьютере) -->
@@ -175,12 +178,23 @@
           {% endfor %}
 
           <!-- Статичные ссылки 2 уровень (на компьютере) -->
+          <!-- Комнаты -->
+          <nav data-submenu="2_8" class="menu__links js-submenu h-hide">
+            <a href="/index.php?route=product/category&path=88_64" class="links__link menu2__link">Спальные гарнитуры</a>
+            <a href="/index.php?route=product/category&path=88_79" class="links__link menu2__link">Прихожие</a>
+            <a href="/index.php?route=product/category&path=88_105" class="links__link menu2__link">Гостиная</a>
+            <a href="/index.php?route=product/category&path=88_107" class="links__link menu2__link">Кухня</a>
+            <a href="/index.php?route=product/category&path=88_108" class="links__link menu2__link">Детская</a>
+            <a href="/index.php?route=product/category&path=88_109" class="links__link menu2__link">Студия</a>
+          </nav>
+          <!-- Магазины -->
           <nav data-submenu="2_9" class="menu__links js-submenu h-hide">
             <a href="/dizajn-proekty" class="links__link menu2__link">Дизайн-проекты</a>
             <a href="/polezno-znat" class="links__link menu2__link">Полезно знать</a>
             <a href="/interjer-i-dekor" class="links__link menu2__link">Интерьер и декор</a>
             <a href="/mebel-v-detalyah" class="links__link menu2__link">Мебель в деталях</a>
           </nav>
+          <!-- О компании -->
           <nav data-submenu="2_0" class="menu__links js-submenu h-hide">
             <a href="/index.php?route=product/special" class="links__link menu2__link">Акции</a>
             <a href="/index.php?route=extension/maza/blog/home" class="links__link menu2__link">Блог</a>
@@ -296,6 +310,9 @@
                 {% for i1, category1 in categoryTree %}
                 {% set i1 = i1+1 %}
                 <a href="#" {% if category1['children'] != null %} data-submenu-id="2_{{ i1 }}" {% endif %} class="links__link menu1__link{% if i1 == 1 %} menu1__link_active{% endif %}">{{ category1['name'] }}</a>
+                  {% if i1 == 1 %}
+                    <a href="#" data-submenu-id="2_8" class="links__link menu1__link">Комнаты</a>
+                  {% endif %}
                 {% endfor %}
 
                 <!-- Статичные ссылки 1 уровень (на мобильном) -->
@@ -320,6 +337,28 @@
               {% endfor %}
 
               <!-- Статичные ссылки 2 уровень (на мобильном) -->
+              <!-- Комнаты -->
+              <nav data-submenu="2_8" class="menu__links menu__links_menu2 js-submenu h-hide">
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_64" class="row__link row__link_withSubmenu">Спальные гарнитуры</a>
+                </div>
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_79" class="row__link row__link_withSubmenu">Прихожие</a>
+                </div>
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_105" class="row__link row__link_withSubmenu">Гостиная</a>
+                </div>
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_107" class="row__link row__link_withSubmenu">Кухня</a>
+                </div>
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_108" class="row__link row__link_withSubmenu">Детская</a>
+                </div>
+                <div class="links__row">
+                  <a href="/index.php?route=product/category&path=88_109" class="row__link row__link_withSubmenu">Студия</a>
+                </div>
+              </nav>
+              <!-- Магазины -->
               <nav data-submenu="2_9" class="menu__links menu__links_menu2 js-submenu h-hide">
                 <div class="links__row">
                   <a href="/dizajn-proekty" class="row__link row__link_withSubmenu">Дизайн-проекты</a>
@@ -337,6 +376,7 @@
                   <a href="/mebel-v-detalyah" class="row__link row__link_withSubmenu">Мебель в деталях</a>
                 </div>
               </nav>
+              <!-- О компании -->
               <nav data-submenu="2_0" class="menu__links menu__links_menu2 js-submenu h-hide">
                 <div class="links__row">
                   <a href="/index.php?route=product/special" class="row__link row__link_withSubmenu">Акции</a>

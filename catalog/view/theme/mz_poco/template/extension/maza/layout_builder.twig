@@ -2,7 +2,7 @@
   {# если рендерится блок "МЫ РЕКОМЕНДУЕМ" #}
   {% if entry_id == 242928 %}
     {# показываю перед ним блок с товарами на фотографиях #}
-    test
+    {% include 'mz_poco/template/extension/products_in_photos/index.html' %}
   {% endif %}
 
   {% if (type == 'section') %} {# Section entry #}

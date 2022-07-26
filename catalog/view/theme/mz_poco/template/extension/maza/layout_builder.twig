@@ -1,4 +1,10 @@
 {% if condition %}{{ '{% if ' ~ condition ~ ' %}' }}{% endif %}
+  {# если рендерится блок "МЫ РЕКОМЕНДУЕМ" #}
+  {% if entry_id == 242928 %}
+    {# показываю перед ним блок с товарами на фотографиях #}
+    test
+  {% endif %}
+
   {% if (type == 'section') %} {# Section entry #}
     {% if collapsible_status %}
     <div id="{{ unique_id }}" class="collapse {{ collapsible_default?'show ' }}">

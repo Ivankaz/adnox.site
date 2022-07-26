@@ -51,9 +51,18 @@ h6 {
   padding: 0;
 }
 
-.main {
-  padding-top: 150px;
+section.main {
+  margin-bottom: 2rem;
 }
+
+#entry_242924 {
+  margin-bottom: 0rem;
+}
+
+#entry_242925 {
+  margin-bottom: 2rem;
+}
+
 .blocks__wrapper {
   display: flex;
   justify-content: center;

@@ -69,9 +69,9 @@ class ModelExtensionMazaMenu extends Model
         }
 
         // сортирую категории по возрастанию id
-        usort($childrenData, function ($a, $b) {
+        /*usort($childrenData, function ($a, $b) {
             return ($a['id']-$b['id']);
-        });
+        });*/
 
         return $childrenData;
     }

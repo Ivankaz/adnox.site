@@ -1,0 +1,257 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  -webkit-list-style-type: none;
+  -moz-list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  padding-top: 150px;
+}
+.blocks__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.block {
+  width: 33.333%;
+  padding: 0 5px;
+}
+.block__image {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.image__button {
+  position: absolute;
+}
+#block1_first_btn {
+  left: 7%;
+  bottom: 25%;
+}
+#block1_second_btn {
+  left: 40%;
+  bottom: 50%;
+}
+#block1_third_btn {
+  right: 15%;
+  bottom: 30%;
+}
+#block2_first_btn {
+  left: 50%;
+  bottom: 25%;
+}
+#block3_first_btn {
+  left: 12%;
+  bottom: 25%;
+}
+#block3_second_btn {
+  left: 75%;
+  bottom: 25%;
+}
+.block_img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.button__svg:hover + #block1_first {
+  fill: #000;
+  -webkit-fill: #000;
+  -moz-fill: #000;
+}
+
+.button__wrapper {
+  position: relative;
+}
+.button__wrapper .button__popup {
+  visibility: hidden;
+  -moz-visibility: hidden;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+#block1_first_popup {
+  top: -30px;
+  left: 35px;
+}
+#block1_second_popup {
+  top: -40px;
+  left: 35px;
+}
+#block1_third_popup {
+  top: -50px;
+  right: 35px;
+}
+
+#block2_first_popup {
+  top: -60px;
+  right: 35px;
+}
+#block3_first_popup {
+  top: -60px;
+  left: 35px;
+}
+#block3_second_popup {
+  top: -60px;
+  right: 35px;
+}
+.button__wrapper:hover > .button__popup {
+  visibility: visible;
+  -moz-visibility: visible;
+}
+.button__wrapper:focus > .button__popup {
+  visibility: visible;
+  transition: all 0.3s linear;
+  -moz-visibility: visible;
+  -webkit-transition: all 0.3s linear;
+}
+.button__wrapper:active > .button__popup {
+  visibility: visible;
+  transition: all 0.3s linear;
+  -moz-visibility: visible;
+  -webkit-transition: all 0.3s linear;
+}
+.popup__wrapper {
+  background-color: #fff;
+  color: #000;
+  border-radius: 6px;
+  padding: 15px;
+  min-width: 180px;
+}
+.popup__link {
+  font-size: 18px;
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  font-weight: 700;
+  color: #000;
+}
+.popup__link:hover {
+  color: #da0916;
+}
+.popup__bottom {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup__price {
+  font-weight: 700;
+  font-size: 23px;
+}
+.popup__cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #da0916;
+  padding: 10px;
+  border-radius: 50%;
+}
+.popup__cart img {
+  width: 24px;
+  height: 24px;
+}
+
+.button__svg:hover > .block_fill {
+  fill: #da0916;
+  transition: all 0.1s linear;
+  -webkit-fill: #da0916;
+  -moz-fill: #da0916;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+}
+
+.button__svg:focus > .block_fill {
+  fill: #da0916;
+  transition: all 0.1s linear;
+  -webkit-fill: #da0916;
+  -moz-fill: #da0916;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+}
+
+@media (max-width: 1200px) {
+  .popup__wrapper {
+    padding: 7px;
+    min-width: 120px;
+  }
+  .popup__cart {
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .popup__cart img {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .block {
+    width: 100%;
+    padding: 0 5px;
+    margin-bottom: 20px;
+  }
+  .popup__wrapper {
+    padding: 15px;
+    min-width: 180px;
+  }
+  .popup__cart {
+    padding: 10px;
+  }
+  .popup__cart img {
+    width: 25px;
+    height: 25px;
+  }
+}
